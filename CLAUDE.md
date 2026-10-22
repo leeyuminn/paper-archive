@@ -32,9 +32,9 @@
 
 ## 로컬 PDF 폴더
 
-- 원본 위치: ~/Papers/ (저장소 밖. 절대 저장소로 복사하지 않는다)
-- 새 논문은 ~/Papers/_inbox/에 들어온다.
-- 정리한 PDF는 ~/Papers/<field>/<topic>/<approach>/<마크다운과 같은 파일명>.pdf로 옮긴다.
+- 원본 위치: ~/cgrlab/Papers/ (저장소 밖. 절대 저장소로 복사하지 않는다)
+- 새 논문은 ~/cgrlab/Papers/_inbox/에 들어온다.
+- 정리한 PDF는 ~/cgrlab/Papers/<field>/<topic>/<approach>/<마크다운과 같은 파일명>.pdf로 옮긴다.
 
 ## inbox 정리 절차
 
