@@ -133,8 +133,11 @@
     const gL = svg.append("g");
     const gN = svg.append("g");
 
-    // 전체 보기에서는 가운데와 분야만, 분야를 누르면 그 분야 전체를 확대
-    const visible = () => (focus ? focus.descendants() : all.filter((d) => d.depth < 2));
+    // 한 단계씩 확대: 전체 보기 → 분야와 주제 → 주제 아래의 접근 방법과 논문
+    const shown = (f) => d3.hierarchy(f, (n) => (n === f || f.depth > 1 ? n.children : null)).descendants().map((l) => l.data);
+    const visible = () => (focus ? shown(focus) : all.filter((d) => d.depth < 2));
+    // 숫자 배지(논문 수)는 지금 누를 수 있는 분야/주제 버블에만
+    const hasBadge = (d) => (focus ? focus.depth === 1 && d.depth === 2 : d.depth === 1);
     const linksOf = (v) => {
       const s = new Set(v);
       return v.filter((d) => d.parent && s.has(d.parent)).map((d) => ({ source: d.parent, target: d }));
@@ -187,18 +190,21 @@
     }
 
     function enterFocus(f) {
+      if (focus) { focus.fx = null; focus.fy = null; }
       focus = f;
       h.fx = null; h.fy = null; f.fx = 0; f.fy = 0;
-      const local = d3.hierarchy(f.data);
+      const local = d3.hierarchy(f, (n) => (n === f || f.depth > 1 ? n.children : null));
       tree(local);
-      const src = f.descendants(), loc = local.descendants();
-      src.forEach((d, k) => {
-        const a = loc[k].x - Math.PI / 2, r = RING_FOCUS[d.depth - f.depth];
+      local.each((l) => {
+        const d = l.data, a = l.x - Math.PI / 2, r = RING_FOCUS[l.depth];
         d.tx = Math.cos(a) * r; d.ty = Math.sin(a) * r;
-        if (!nodes.includes(d)) { d.x = f.x; d.y = f.y; }
+        // 새로 나타나는 버블은 자기 방향 쪽에서 출발해야 연결선이 엇갈리지 않음
+        if (!nodes.includes(d)) { d.x = d.tx * 0.5; d.y = d.ty * 0.5; }
       });
       if (back) back.hidden = false;
-      say(`${label(f)} 분야를 확대했어요. 가운데 버블이나 전체 보기를 누르면 돌아가요.`);
+      say(f.depth === 1
+        ? `${label(f)} 분야예요. 주제 버블을 누르면 접근 방법과 논문이 펼쳐져요.`
+        : `${label(f)} 주제예요. 가운데 버블을 누르면 분야로 돌아가요.`);
       run();
     }
 
@@ -215,17 +221,17 @@
 
     function act(d) {
       if (isPaper(d)) { window.location.href = d.data.url; return; }
-      if (focus) { if (d === focus) exitFocus(); return; }
-      if (d.depth === 1) enterFocus(d);
+      if (d === focus) { if (d.depth > 1) enterFocus(d.parent); else exitFocus(); return; }
+      if (hasBadge(d)) enterFocus(d);
     }
 
-    const clickable = (d) => isPaper(d) || (focus ? d === focus : d.depth === 1);
+    const clickable = (d) => isPaper(d) || d === focus || hasBadge(d);
     const ariaLabel = (d) => {
       const n = isPaper(d) ? d.data.title : label(d);
       if (!clickable(d)) return n;
       if (isPaper(d)) return `${n} 논문 페이지 열기`;
-      if (d === focus) return `${n}, 전체 보기로 돌아가기`;
-      return `${n} 분야 확대 (논문 ${d.leaves().length}편)`;
+      if (d === focus) return d.depth > 1 ? `${n}, ${label(d.parent)} 분야로 돌아가기` : `${n}, 전체 보기로 돌아가기`;
+      return `${n} ${d.depth === 1 ? "분야" : "주제"} 확대 (논문 ${d.leaves().length}편)`;
     };
 
     function render() {
@@ -254,9 +260,10 @@
         const ink = d.depth === 0 ? CENTER.ink : d.pal.ink;
         g.append("circle").attr("class", "bub").attr("r", R(d)).attr("fill", fill).attr("stroke", ink).attr("stroke-width", 0);
         writeLabel(g, d, ink);
-        if (d.depth === 1) {
+        if (d.depth === 1 || d.depth === 2) {
           const b = g.append("g").attr("class", "badge");
-          const bx = RAD_OVERVIEW[1] * 0.72, by = -RAD_OVERVIEW[1] * 0.72;
+          const br = d.depth === 1 ? RAD_OVERVIEW[1] : RAD_FOCUS[1];
+          const bx = br * 0.72, by = -br * 0.72;
           b.append("circle").attr("cx", bx).attr("cy", by).attr("r", 11).attr("fill", d.pal.line);
           b.append("text").attr("x", bx).attr("y", by).attr("text-anchor", "middle").attr("dominant-baseline", "central")
             .style("font-size", "11px").style("font-weight", 700).style("fill", "#FFFFFF").text(d.leaves().length);
@@ -269,7 +276,7 @@
       gN.selectAll("g.nd").each(function (d) {
         const g = d3.select(this);
         g.select("circle.bub").transition().duration(reduce ? 0 : 350).attr("r", R(d));
-        g.select("g.badge").style("display", focus ? "none" : null);
+        g.select("g.badge").style("display", hasBadge(d) ? null : "none");
         if (clickable(d)) g.attr("tabindex", 0).attr("role", "button");
         else g.attr("tabindex", null).attr("role", null);
         g.attr("aria-label", ariaLabel(d));
