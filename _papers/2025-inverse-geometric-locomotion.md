@@ -10,8 +10,8 @@ approach: "Spacetime optimization"
 links:
   paper: "https://doi.org/10.1145/3731187"
   arxiv: ""
-  project: "https://go.epfl.ch/igl/"
-  code: ""
+  project: ""
+  code: "https://github.com/EPFL-LGG/inverse_geometric_locomotion"
   video: ""
 read_date: 2026-10-22
 tags: [geometric-locomotion, inverse-design, differentiable-simulation, gait-optimization, shape-space]
