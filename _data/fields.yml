@@ -1,0 +1,9 @@
+# 분야 순서와 버블 색.
+# palette 선택지: lavender, mint, babypink, butter, lilac, peach
+# 여기에 없는 분야가 논문에 등장하면 남은 색이 자동으로 배정돼요.
+- name: Character animation
+  palette: lavender
+- name: Physics-based control
+  palette: mint
+- name: Bio-inspired simulation
+  palette: babypink

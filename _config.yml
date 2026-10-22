@@ -1,0 +1,31 @@
+title: Paper Archive
+description: Reading notes on computer graphics & robotics papers
+url: "https://leeyuminn.github.io"
+baseurl: "/paper-archive"
+lang: ko
+
+# 마인드맵 가운데 버블에 표시될 이름
+mindmap:
+  center: "Paper Archive"
+
+collections:
+  papers:
+    output: true
+    permalink: /papers/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: papers
+    values:
+      layout: paper
+
+markdown: kramdown
+
+exclude:
+  - CLAUDE.md
+  - README.md
+  - templates/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/

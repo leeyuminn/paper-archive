@@ -1,0 +1,25 @@
+---
+layout: default
+title: 전체 논문
+permalink: /papers/
+---
+<section class="list">
+  <h1 class="list-title">전체 논문 <span class="count">{{ site.papers.size }}편</span></h1>
+  {% assign groups = site.papers | group_by: "field" %}
+  {% for g in groups %}
+  {%- assign pal = "" -%}
+  {%- for f in site.data.fields -%}{%- if f.name == g.name -%}{%- assign pal = f.palette -%}{%- endif -%}{%- endfor -%}
+  <div class="list-group" data-palette="{{ pal | default: 'lavender' }}">
+    <h2>{{ g.name }}</h2>
+    <ul>
+      {% assign items = g.items | sort: "read_date", "last" | reverse %}
+      {% for p in items %}
+      <li>
+        <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
+        <span class="list-sub">{{ p.topic }}, {{ p.approach }}{% if p.venue %} ({{ p.venue }}{% if p.year %} {{ p.year }}{% endif %}){% endif %}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</section>

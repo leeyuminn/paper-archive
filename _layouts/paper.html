@@ -1,0 +1,41 @@
+---
+layout: default
+---
+{%- assign pal = "" -%}
+{%- for f in site.data.fields -%}{%- if f.name == page.field -%}{%- assign pal = f.palette -%}{%- endif -%}{%- endfor -%}
+<article class="paper" data-palette="{{ pal | default: 'lavender' }}">
+  <nav class="crumbs" aria-label="분류 경로">
+    <a href="{{ '/' | relative_url }}">마인드맵</a>
+    <span class="crumb">{{ page.field }}</span>
+    <span class="crumb">{{ page.topic }}</span>
+    <span class="crumb crumb-last">{{ page.approach }}</span>
+  </nav>
+
+  <h1 class="paper-title">{{ page.title }}</h1>
+
+  <dl class="paper-meta">
+    {% if page.authors %}<div><dt>저자</dt><dd>{{ page.authors }}</dd></div>{% endif %}
+    {% if page.venue %}<div><dt>발표</dt><dd>{{ page.venue }}{% if page.year %} {{ page.year }}{% endif %}</dd></div>{% endif %}
+    {% if page.read_date %}<div><dt>읽은 날</dt><dd>{{ page.read_date | date: "%Y-%m-%d" }}</dd></div>{% endif %}
+  </dl>
+
+  {% if page.links %}
+  <div class="paper-links">
+    {% if page.links.paper %}<a class="chip" href="{{ page.links.paper }}">논문</a>{% endif %}
+    {% if page.links.arxiv %}<a class="chip" href="{{ page.links.arxiv }}">arXiv</a>{% endif %}
+    {% if page.links.project %}<a class="chip" href="{{ page.links.project }}">프로젝트 페이지</a>{% endif %}
+    {% if page.links.code %}<a class="chip" href="{{ page.links.code }}">코드</a>{% endif %}
+    {% if page.links.video %}<a class="chip" href="{{ page.links.video }}">영상</a>{% endif %}
+  </div>
+  {% endif %}
+
+  <div class="paper-body">
+    {{ content }}
+  </div>
+
+  {% if page.tags and page.tags.size > 0 %}
+  <ul class="tags" aria-label="태그">
+    {% for t in page.tags %}<li>{{ t }}</li>{% endfor %}
+  </ul>
+  {% endif %}
+</article>
