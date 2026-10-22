@@ -7,3 +7,9 @@
   palette: mint
 - name: Bio-inspired simulation
   palette: babypink
+- name: Robot learning
+  palette: butter
+- name: Image & video generation
+  palette: lilac
+- name: 3D assets & physics
+  palette: peach
