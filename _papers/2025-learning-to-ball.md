@@ -2,7 +2,7 @@
 title: "Learning to Ball: Composing Policies for Long-Horizon Basketball Moves"
 short: "LearnBall"
 authors: "Pei Xu, Zhen Wu, Ruocheng Wang, Vishnu Sarukkai, Kayvon Fatahalian, Ioannis Karamouzas, Victor Zordan, C. Karen Liu"
-venue: "ACM TOG"
+venue: "SIGGRAPH Asia"
 year: 2025
 field: "Physics-based control"
 topic: "Skill composition"
@@ -13,7 +13,7 @@ links:
   project: ""
   code: ""
   video: ""
-read_date: 2026-10-22
+read_date: 2025-12-05
 tags: [basketball, policy-composition, long-horizon, soft-routing, adversarial-imitation]
 ---
 

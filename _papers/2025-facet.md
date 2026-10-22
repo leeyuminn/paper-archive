@@ -2,7 +2,7 @@
 title: "FACET: Force-Adaptive Control via Impedance Reference Tracking for Legged Robots"
 short: "FACET"
 authors: "Botian Xu, Haoyang Weng, Qingzhou Lu, Yang Gao, Huazhe Xu"
-venue: ""
+venue: "CoRL"
 year: 2025
 field: "Robot learning"
 topic: "Legged locomotion"
@@ -13,7 +13,7 @@ links:
   project: "https://facet.pages.dev/"
   code: ""
   video: ""
-read_date: 2026-10-22
+read_date: 2025-10-31
 tags: [legged-robot, impedance-control, compliance, teacher-student, sim-to-real]
 ---
 
@@ -48,7 +48,6 @@ Legged robot이 velocity가 아니라 가상의 mass-spring-damper(impedance ref
 - 저자들이 밝힌 한계: reference model과 실제 로봇 dynamics의 차이가 multi-body 상황에서 특히 해결되지 않았고(end-effector target이 도달 불가능할 수 있음), 실제 로봇에 힘·가속도 센서가 없어 sim-to-real gap이 있다. Gait를 정해진 주파수의 oscillator로 제어해서 발 디딤 적응이 제한될 수 있다.
 - 휴머노이드 G1에 대해서는 본문에 정량 결과가 거의 없다. 휴머노이드에서도 실제 로봇 실험을 했는지?
 - 실제 로봇에서는 world frame이 없어 setpoint를 고정 속도/fully compliant 모드로만 줄 수 있다고 한다. 그러면 위치 setpoint 기반 기능(정해진 지점에서 버티기 등)은 실제로 어떻게 쓸 수 있을까?
-- 학회 게재 정보는 원문(arXiv v2)에서 확인되지 않는다.
 
 ## 나의 한마디
 {: .mine-title}

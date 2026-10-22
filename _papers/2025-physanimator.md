@@ -2,7 +2,7 @@
 title: "PhysAnimator: Physics-Guided Generative Cartoon Animation"
 short: "PhysAnim"
 authors: "Tianyi Xie, Yiwei Zhao, Ying Jiang, Chenfanfu Jiang"
-venue: ""
+venue: "CVPR"
 year: 2025
 field: "Image & video generation"
 topic: "Video motion control"
@@ -13,7 +13,7 @@ links:
   project: "https://xpandora.github.io/PhysAnimator/"
   code: ""
   video: ""
-read_date: 2026-10-22
+read_date: 2025-09-19
 tags: [anime, deformable-simulation, image-to-video, sketch-guided, controlnet]
 ---
 

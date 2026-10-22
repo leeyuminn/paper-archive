@@ -13,7 +13,7 @@ links:
   project: "https://sites.google.com/view/robot-keyframing"
   code: ""
   video: ""
-read_date: 2026-10-22
+read_date: 2026-02-13
 tags: [keyframing, quadruped, multi-critic, transformer, sparse-reward]
 ---
 

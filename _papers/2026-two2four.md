@@ -2,7 +2,7 @@
 title: "Two2Four: Generative Quadruped Puppeteering from Human Motion"
 short: "Two2Four"
 authors: "Fatemeh Zargarbashi, Zehong Qiu, Dhruv Agrawal, Stelian Coros, Robert W. Sumner, Martin Guay, Jakob Buhmann"
-venue: ""
+venue: "preprint"
 year: 2026
 field: "Character animation"
 topic: "Motion transfer"
@@ -13,7 +13,7 @@ links:
   project: ""
   code: ""
   video: ""
-read_date: 2026-10-22
+read_date: 2026-08-05
 tags: [quadruped, motion-retargeting, diffusion, inpainting, puppeteering]
 ---
 
@@ -51,7 +51,6 @@ virtual production에서 사람 motion capture로 동물 캐릭터를 움직이�
 - 제어 모드(앉기/점프/puppeteer)와 매핑 파라미터를 사용자가 직접 골라야 한다. 자동 전환은 future work.
 - 실험은 개만 다룬다. 다른 사족보행 동물로의 확장은 데이터가 있으면 가능하다고만 주장한다.
 - 정량 비교는 Walk-the-Dog 하나뿐이고, 정성 평가는 아티스트 2명의 체크 표시 수준이라 근거가 약하지 않을까?
-- 게재처(venue)가 원문에서 확인되지 않는다.
 
 ## 나의 한마디
 {: .mine-title}

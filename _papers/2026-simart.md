@@ -2,7 +2,7 @@
 title: "SIMART: Decomposing Monolithic Meshes into Sim-ready Articulated Assets via MLLM"
 short: "SIMART"
 authors: "Chuanrui Zhang, Minghan Qin, Yuang Wang, Baifeng Xie, Hang Li, Ziwei Wang"
-venue: ""
+venue: "SIGGRAPH"
 year: 2026
 field: "3D assets & physics"
 topic: "Sim-ready assets"
@@ -13,7 +13,7 @@ links:
   project: "https://simart-mllm.github.io"
   code: ""
   video: ""
-read_date: 2026-10-22
+read_date: 2026-07-08
 tags: [articulated-objects, urdf, mllm, vq-vae, part-segmentation]
 ---
 
@@ -54,7 +54,6 @@ tags: [articulated-objects, urdf, mllm, vq-vae, part-segmentation]
 - SIMART-Bench가 36개 asset으로 작아 OOD 결과의 통계적 신뢰도가 궁금하다
 - 64³ 해상도 voxel로 서랍 레일이나 작은 손잡이처럼 얇은 부품의 joint axis를 얼마나 정밀하게 잡을 수 있는지
 - 결론에서는 "kinematic reasoning과 geometric generation을 decoupling"했다고 표현해 서론의 단일 통합 모델 주장과 표현이 엇갈린다
-- 원문(arXiv v1, 2026-03)에 학회 표기가 없어 venue는 비워 둠
 
 ## 나의 한마디
 {: .mine-title}

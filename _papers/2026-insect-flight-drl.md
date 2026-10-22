@@ -2,7 +2,7 @@
 title: "Data-Driven Control of Insect Flapping Flight via Deep Reinforcement Learning"
 short: "InsectDRL"
 authors: "Tingsong Lu, Qiang Chen, Yuming Fang, Camille Le Roy, Xiaogang Jin, Zhigang Deng"
-venue: "IEEE TVCG"
+venue: "TVCG"
 year: 2026
 field: "Bio-inspired simulation"
 topic: "비행 시뮬레이션"
@@ -13,7 +13,7 @@ links:
   project: ""
   code: ""
   video: ""
-read_date: 2026-10-22
+read_date: 2026-04-15
 tags: [insect-flight, flapping-wing, aerodynamics, deep-rl, obstacle-avoidance]
 ---
 
@@ -47,7 +47,6 @@ tags: [insect-flight, flapping-wing, aerodynamics, deep-rl, obstacle-avoidance]
 - 날개 변형(wing deformation)은 모델링하지 않는다. 저자들도 향후 과제로 언급한다.
 - action이 amplitude와 frequency뿐이고 stroke plane 기울기나 rotation 타이밍 같은 다른 조종 수단은 없다. 곤충이 실제로 쓰는 조종 전략을 얼마나 담을 수 있을까?
 - 학습 가능한 reward weight가 실제로 어떤 값으로 수렴했는지, 고정 weight와 비교하면 차이가 있는지는 본문에서 확인하지 못했다(supplemental에 있을 수도 있음).
-- 헤더 날짜는 "NOVEMBER 2025"이고 DOI는 2026으로 되어 있다. 정식 게재 연도는 확인이 필요하다.
 
 ## 나의 한마디
 {: .mine-title}

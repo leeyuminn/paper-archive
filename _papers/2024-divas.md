@@ -13,7 +13,7 @@ links:
   project: ""
   code: ""
   video: ""
-read_date: 2026-10-22
+read_date: 2026-02-27
 tags: [lip-sync, audio-visual, transformer, contrastive-learning, active-speaker-detection]
 ---
 

@@ -2,7 +2,7 @@
 title: "Environment-aware Motion Matching"
 short: "Env-MM"
 authors: "Jose Luis Ponton, Sheldon Andrews, Carlos Andujar, Nuria Pelechano"
-venue: "ACM TOG"
+venue: "SIGGRAPH Asia"
 year: 2025
 field: "Character animation"
 topic: "Motion matching"
@@ -13,7 +13,7 @@ links:
   project: "https://upc-virvig.github.io/Environment-aware-Motion-Matching"
   code: ""
   video: ""
-read_date: 2026-10-22
+read_date: 2025-11-21
 tags: [motion-matching, crowd-simulation, collision-avoidance, real-time, locomotion]
 ---
 

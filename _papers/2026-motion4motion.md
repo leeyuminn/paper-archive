@@ -2,7 +2,7 @@
 title: "Motion4Motion: Motion Transfer Across Subjects at Inference"
 short: "Motion4Motion"
 authors: "Ling-Hao Chen, Zixin Yin, Duomin Wang, Xianfang Zeng, Gang Yu"
-venue: "SIGGRAPH Conference Papers"
+venue: "SIGGRAPH"
 year: 2026
 field: "Character animation"
 topic: "Motion transfer"
@@ -13,7 +13,7 @@ links:
   project: "https://lhchen.top/Motion4Motion/"
   code: ""
   video: ""
-read_date: 2026-10-22
+read_date: 2026-07-22
 tags: [motion-transfer, video-diffusion, training-free, attention-control, cross-species]
 ---
 

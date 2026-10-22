@@ -2,7 +2,7 @@
 title: "Autonomous Human-Robot Interaction via Operator Imitation"
 short: "OpImit"
 authors: "Sammy Christen, David Müller, Agon Serifi, Ruben Grandia, Georg Wiedebach, Michael A. Hopkins, Espen Knoop, Moritz Bächer"
-venue: ""
+venue: "IROS"
 year: 2025
 field: "Robot learning"
 topic: "Human-robot interaction"
@@ -13,7 +13,7 @@ links:
   project: ""
   code: ""
   video: "https://youtu.be/4U4etupwzhQ"
-read_date: 2026-10-22
+read_date: 2026-06-17
 tags: [human-robot-interaction, teleoperation, imitation-learning, transformer, robotic-character]
 ---
 
@@ -47,7 +47,6 @@ Teleoperated 로봇 캐릭터는 숙련된 operator 덕분에 사람과 표현�
 - 저자들이 밝힌 한계: 사람 pose를 mocap에 의존하고, 긴 시간에 걸친 의사결정이나 여러 상호작용을 잇는 행동은 다루지 않는다. Mood는 사람이 수동으로 고르고, operator 1명·사람 2명 데이터, 신체 접촉 없는 1:1 상호작용에 한정된다.
 - Operator 구분 실험은 default 모드에서만 했다. Mood가 들어간 상호작용에서도 operator와 구분되지 않을까?
 - 휴머노이드 zero-shot transfer는 정성적 결과(그림, 영상)만 있다. 다리 길이나 속도가 다른 로봇에서도 같은 joystick 입력이 같은 의미가 될까?
-- 원문 PDF에 학회명과 연도 표기가 없다. year 2025는 PDF 생성일(2025-07)과 참고문헌에 2025년 논문이 있는 점을 근거로 넣은 값이다.
 
 ## 나의 한마디
 {: .mine-title}

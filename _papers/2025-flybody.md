@@ -13,7 +13,7 @@ links:
   project: ""
   code: "https://github.com/TuragaLab/flybody"
   video: ""
-read_date: 2026-10-22
+read_date: 2026-04-29
 tags: [drosophila, mujoco, imitation-learning, hierarchical-control, insect-locomotion]
 ---
 

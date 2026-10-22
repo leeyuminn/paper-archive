@@ -13,7 +13,7 @@ links:
   project: "https://bootstrap-rl-with-il.github.io/"
   code: ""
   video: ""
-read_date: 2026-10-22
+read_date: 2026-03-11
 tags: [quadrotor, drone-racing, visuomotor-policy, imitation-learning, fine-tuning]
 ---
 

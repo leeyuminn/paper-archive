@@ -13,7 +13,7 @@ links:
   project: ""
   code: ""
   video: ""
-read_date: 2026-10-22
+read_date: 2026-09-17
 tags: [style-transfer, rvq-vae, disentanglement, contrastive-learning, motion-representation]
 ---
 

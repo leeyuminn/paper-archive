@@ -2,7 +2,7 @@
 title: "A Bio-Inspired Model for Bee Simulations"
 short: "Bee Sim"
 authors: "Qiang Chen, Wenxiu Guo, Yuming Fang, Yang Tong, Tingsong Lu, Xiaogang Jin, Zhigang Deng"
-venue: "IEEE TVCG"
+venue: "TVCG"
 year: 2025
 field: "Bio-inspired simulation"
 topic: "비행 시뮬레이션"
@@ -13,7 +13,7 @@ links:
   project: ""
   code: ""
   video: ""
-read_date: 2026-10-22
+read_date: 2026-05-13
 tags: [bee, swarm-simulation, curl-noise, collective-behavior, data-driven-calibration]
 ---
 

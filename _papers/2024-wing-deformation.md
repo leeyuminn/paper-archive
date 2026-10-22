@@ -2,7 +2,7 @@
 title: "Real-time Wing Deformation Simulations for Flying Insects"
 short: "WingDeform"
 authors: "Qiang Chen, Zhigang Deng, Feng Li, Yuming Fang, Tingsong Lu, Yang Tong, Yifan Zuo"
-venue: "SIGGRAPH Conference Papers"
+venue: "SIGGRAPH"
 year: 2024
 field: "Bio-inspired simulation"
 topic: "비행 시뮬레이션"
@@ -13,7 +13,7 @@ links:
   project: ""
   code: ""
   video: ""
-read_date: 2026-10-22
+read_date: 2026-03-25
 tags: [insect-wing, deformation, skeleton-driven, mass-spring, aerodynamics]
 ---
 

@@ -2,7 +2,7 @@
 title: "Gaussian See, Gaussian Do: Semantic 3D Motion Transfer from Multiview Video"
 short: "GSGD"
 authors: "Yarin Bekor, Gal Michael Harari, Or Perel, Or Litany"
-venue: ""
+venue: "SIGGRAPH Asia"
 year: 2025
 field: "Character animation"
 topic: "Motion transfer"
@@ -13,7 +13,7 @@ links:
   project: "https://gsgd-motiontransfer.github.io"
   code: ""
   video: ""
-read_date: 2026-10-22
+read_date: 2026-01-09
 tags: [motion-transfer, 3d-gaussian-splatting, video-diffusion, condition-inversion, 4d-reconstruction]
 ---
 
@@ -51,7 +51,6 @@ multiview video에서 video diffusion(SVD)의 condition inversion으로 motion e
 - 3D semantic motion을 제대로 재는 지표가 없어 2D Motion Fidelity와 CLIP 계열로 평가한다. 이 지표가 "의미가 맞는 motion"을 충분히 반영할까?
 - multiview source video가 필요하다. 단일 view 영상만 있을 때는 어떻게 할까?
 - SVD가 생성한 supervision에 의존하므로, motion 길이·해상도도 SVD의 한계(짧은 clip)에 묶이는 것 아닌가?
-- 원문에 게재처(venue) 표기가 없고 arXiv 표기만 있다.
 
 ## 나의 한마디
 {: .mine-title}

@@ -2,7 +2,7 @@
 title: "Fishbone: From One 3D Asset to a Million Controllable Edits"
 short: "Fishbone"
 authors: "Yumeng He, Xiaoying Wang, Peihao Li, Yanjia Huang, Joe Masterjohn, Jiajun Wu, Leonidas Guibas, Yin Yang, Ying Jiang, Chenfanfu Jiang"
-venue: ""
+venue: "preprint"
 year: 2026
 field: "3D assets & physics"
 topic: "Shape deformation"
@@ -13,7 +13,7 @@ links:
   project: ""
   code: ""
   video: ""
-read_date: 2026-10-22
+read_date: 2026-08-26
 tags: [mesh-deformation, skinning, reduced-simulation, data-augmentation, 3d-generation]
 ---
 
@@ -52,7 +52,6 @@ tags: [mesh-deformation, skinning, reduced-simulation, data-augmentation, 3d-gen
 - reduced dynamics는 "physically inspired" 수준으로, 정확한 물리 시뮬레이션과의 정량 비교는 원문에서 확인되지 않는다
 - 편집 비교는 4개 메시(Dragon, Nefertiti, Chair, Spot)뿐이고 "comparable target deformation"을 어떻게 맞췄는지가 결과에 영향을 줄 수 있어 보인다
 - 분기가 복잡하거나 non-manifold인 입력에서 전처리 시간이 길어지는(최대 1,143초) 경우가 실제로 얼마나 흔한지?
-- 원문(arXiv v1, 2026-05)에 학회 표기가 없어 venue는 비워 둠
 
 ## 나의 한마디
 {: .mine-title}

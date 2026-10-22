@@ -2,8 +2,8 @@
 title: "Reenact Anything: Semantic Video Motion Transfer Using Motion-Textual Inversion"
 short: "Reenact"
 authors: "Manuel Kansy, Jacek Naruniec, Christopher Schroers, Markus Gross, Romann M. Weber"
-venue: ""
-year: 2024
+venue: "SIGGRAPH"
+year: 2025
 field: "Image & video generation"
 topic: "Video motion control"
 approach: "Embedding inversion"
@@ -13,7 +13,7 @@ links:
   project: "https://mkansy.github.io/reenact-anything/"
   code: ""
   video: ""
-read_date: 2026-10-22
+read_date: 2026-01-23
 tags: [motion-transfer, image-to-video, textual-inversion, reenactment, video-diffusion]
 ---
 
