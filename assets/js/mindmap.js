@@ -117,7 +117,6 @@
       const r = RING_OVERVIEW[d.depth];
       d.ox = Math.cos(a) * r; d.oy = Math.sin(a) * r;
       d.tx = d.ox; d.ty = d.oy; d.x = d.ox; d.y = d.oy;
-      d.open = false;
       all.push(d);
     });
     h.fx = 0; h.fy = 0;
@@ -131,7 +130,8 @@
     const gL = svg.append("g");
     const gN = svg.append("g");
 
-    const visible = () => (focus ? focus.descendants() : all.filter((d) => d.depth < 4 || d.parent.open));
+    // 전체 보기에서는 가운데와 분야만, 분야를 누르면 그 분야 전체를 확대
+    const visible = () => (focus ? focus.descendants() : all.filter((d) => d.depth < 2));
     const linksOf = (v) => {
       const s = new Set(v);
       return v.filter((d) => d.parent && s.has(d.parent)).map((d) => ({ source: d.parent, target: d }));
@@ -210,32 +210,19 @@
       run();
     }
 
-    function toggle(d) {
-      d.open = !d.open;
-      const n = Math.hypot(d.ox, d.oy) || 1;
-      d.children.forEach((c) => {
-        c.x = d.x; c.y = d.y;
-        c.ox = d.ox + (d.ox / n) * 85; c.oy = d.oy + (d.oy / n) * 85;
-        c.tx = c.ox; c.ty = c.oy;
-      });
-      say(d.open ? `${label(d)} 논문 ${d.children.length}편을 펼쳤어요.` : DEFAULT_CAPTION);
-      run();
-    }
-
     function act(d) {
       if (isPaper(d)) { window.location.href = d.data.url; return; }
       if (focus) { if (d === focus) exitFocus(); return; }
       if (d.depth === 1) enterFocus(d);
-      else if (d.depth === 3) toggle(d);
     }
 
-    const clickable = (d) => isPaper(d) || (focus ? d === focus : d.depth === 1 || d.depth === 3);
+    const clickable = (d) => isPaper(d) || (focus ? d === focus : d.depth === 1);
     const ariaLabel = (d) => {
       const n = isPaper(d) ? d.data.title : label(d);
       if (!clickable(d)) return n;
       if (isPaper(d)) return `${n} 논문 페이지 열기`;
       if (d === focus) return `${n}, 전체 보기로 돌아가기`;
-      return d.depth === 1 ? `${n} 분야 확대` : `${n} 논문 펼치기`;
+      return `${n} 분야 확대 (논문 ${d.leaves().length}편)`;
     };
 
     function render() {
@@ -264,12 +251,12 @@
         const ink = d.depth === 0 ? CENTER.ink : d.pal.ink;
         g.append("circle").attr("class", "bub").attr("r", R(d)).attr("fill", fill).attr("stroke", ink).attr("stroke-width", 0);
         writeLabel(g, d, ink);
-        if (d.depth === 3) {
+        if (d.depth === 1) {
           const b = g.append("g").attr("class", "badge");
-          const bx = RAD_OVERVIEW[3] * 0.72, by = -RAD_OVERVIEW[3] * 0.72;
+          const bx = RAD_OVERVIEW[1] * 0.72, by = -RAD_OVERVIEW[1] * 0.72;
           b.append("circle").attr("cx", bx).attr("cy", by).attr("r", 11).attr("fill", d.pal.line);
           b.append("text").attr("x", bx).attr("y", by).attr("text-anchor", "middle").attr("dominant-baseline", "central")
-            .style("font-size", "11px").style("font-weight", 700).style("fill", "#FFFFFF").text(d.children.length);
+            .style("font-size", "11px").style("font-weight", 700).style("fill", "#FFFFFF").text(d.leaves().length);
         }
       });
 
@@ -279,7 +266,6 @@
       gN.selectAll("g.nd").each(function (d) {
         const g = d3.select(this);
         g.select("circle.bub").transition().duration(reduce ? 0 : 350).attr("r", R(d));
-        if (d.depth === 3 && !isPaper(d)) g.select("circle.bub").attr("stroke-width", !focus && d.open ? 2 : 0);
         g.select("g.badge").style("display", focus ? "none" : null);
         if (clickable(d)) g.attr("tabindex", 0).attr("role", "button");
         else g.attr("tabindex", null).attr("role", null);
