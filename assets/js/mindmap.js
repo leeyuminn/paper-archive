@@ -37,12 +37,15 @@
 
   // 긴 이름을 버블 안에 들어가게 줄바꿈 (최대 3줄)
   function wrap(text, max) {
-    const words = String(text || "").trim().split(/\s+/);
+    // 너무 긴 단어는 하이픈 뒤에서 끊을 수 있게 나눔 (Physics-based → Physics- / based)
+    const words = String(text || "").trim().split(/\s+/)
+      .flatMap((w) => (w.length > max && w.includes("-") ? w.split(/(?<=-)/) : [w]));
     const lines = [];
     let cur = "";
     for (const w of words) {
+      const next = cur.endsWith("-") ? cur + w : cur + " " + w;
       if (!cur) cur = w;
-      else if ((cur + " " + w).length <= max) cur += " " + w;
+      else if (next.length <= max) cur = next;
       else { lines.push(cur); cur = w; }
     }
     if (cur) lines.push(cur);
