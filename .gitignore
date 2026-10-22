@@ -1,0 +1,15 @@
+# 논문 원본 (공개 저장소라 올리면 안 됨)
+*.pdf
+
+# Jekyll 로컬 빌드 결과물
+_site/
+.jekyll-cache/
+.sass-cache/
+.jekyll-metadata
+
+# Ruby/Bundler 로컬 설치 파일
+.bundle/
+vendor/
+
+# OS 잡파일
+.DS_Store
